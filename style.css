@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: darkblue;
+}
+
+.navbar-container {
+    height: 80px;
+    box-shadow: 1px 5px 4px 2px rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-container h1 {
+    color: white;
+}
+
+.image-container {
+    padding: 48px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.image-box img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    transition: all 125ms ease-in-out;
+}
+
+.image-box img:hover {
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 125ms ease-in-out;
+    filter: drop-shadow(20px 10px 4px #4444dd);
+}
+
+.bigimg-container {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.bigimg-box { 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+}
+
+.bigimg-box img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.bigimg-box .main-img {
+    width: 70%;
+    height: 800px;
+    object-fit: contain;
+}
+
+.ico-close img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.ico-close {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+}
+
+@media (max-width: 1140px) {
+    .bigimg-box .main-img {
+        width: 70%;
+        height: 100%;
+    }
+
+    .bigimg-box .icon {
+        display: none;
+    }
+
+    .xtra-icons {
+        z-index: 999;
+        position: fixed;
+        bottom: 24px;
+        width: 100vw;
+        height: 200px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .xtra-icons img {
+        width: 90px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 970px) {
+    .bigimg-box .main-img {
+        width: 70%;
+        height: 100%;
+    }
+
+    .bigimg-box .icon {
+        display: none;
+    }
+
+    .xtra-icons {
+        z-index: 999;
+        position: fixed;
+        bottom: 24px;
+        width: 100vw;
+        height: 200px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .xtra-icons img {
+        width: 90px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 420px) {
+    .image-box img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .ico-close img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .xtra-icons img {
+        width: 60px;
+    }
+}
+
+.dp-none {
+    display: none;
+}

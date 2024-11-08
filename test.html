@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body onload="renderTodo()">
+    <h1>Todo List</h1>
+
+    <div id="rendertodo">
+      <ul id="todo-list">
+        <!-- Todos werden hier eingefügt -->
+      </ul>
+    </div>
+
+    <input type="text" id="input" />
+    <button onclick="addTodo()">speichern</button>
+
+    <script>
+      let todos = [];
+
+      function addTodo() {
+        let input = document.getElementById("input");
+        todos.push(input.value);
+        input.value = "";
+
+        renderTodo();
+      }
+
+      function renderTodo() {
+        let todoList = document.getElementById("todo-list");
+        todoList.innerHTML = ""; // Clear existing todos
+    
+        for (let i = 0; i < todos.length; i++) {
+          const todoItem = todos[i];
+          todoList.innerHTML += `
+            <li>${todoItem} <button onclick="deleteTodo(${i})">X</button> </li>`;
+        }
+      }
+
+      function deleteTodo(i) {
+        todos.splice(i, 1);
+        renderTodo();
+      }
+    </script>
+  </body>
+</html>
